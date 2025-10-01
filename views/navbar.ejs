@@ -1,0 +1,11 @@
+<nav style="background-color: #333; padding: 0.5rem; margin-bottom: 1rem;">
+  <ul style="display: flex; gap: 1rem; list-style-type: none; margin: 0; padding: 0;">
+    <% links.forEach(link=> { %>
+      <li>
+        <a href="<%= link.path %>">
+          <%= link.label %>
+        </a>
+      </li>
+      <% }) %>
+  </ul>
+</nav>

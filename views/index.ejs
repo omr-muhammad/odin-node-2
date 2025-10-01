@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= title %>
+  </title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 1.25rem;
+    }
+
+    li {
+      background-color: #f4f4f4;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 5px;
+    }
+
+    strong {
+      color: #333;
+    }
+
+    em {
+      color: #555;
+    }
+
+    small {
+      color: #888;
+      display: block;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <nav>
+    <%- include("navbar", { links }) %>
+  </nav>
+  <ul>
+    <% messages.forEach(msg=> { %>
+      <li>
+        <strong>
+          User: <%= msg.user %>
+        </strong>
+        <em>
+          Text: <%= msg.text.slice(7) %>...
+        </em>
+        <small>
+          Date: <%= msg.added.toLocaleString() %>
+        </small>
+        <button>
+          <a href="/message/<%= msg.added.getSeconds() %>">View</a>
+        </button>
+      </li>
+      <% }) %>
+  </ul>
+</body>
+
+</html>

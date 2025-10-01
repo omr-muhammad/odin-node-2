@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= message.user %>
+  </title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 1.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    strong {
+      color: #333;
+    }
+
+    em {
+      color: #555;
+    }
+
+    small {
+      color: #888;
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    span {
+      font-size: 1.25rem;
+    }
+  </style>
+</head>
+
+<body>
+  <span>
+    Send By: <strong>
+      <%= message.user %>
+    </strong>
+  </span>
+  <br />
+  <span>
+    Message: <%= message.text %>
+  </span>
+
+  <br />
+
+  <small>
+    <em>Posted on
+      <%= message.added.toLocaleString() %>
+    </em>
+  </small>
+</body>
+
+</html>
